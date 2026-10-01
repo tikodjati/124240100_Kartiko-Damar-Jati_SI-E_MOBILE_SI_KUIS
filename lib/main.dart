@@ -1,16 +1,31 @@
+import 'package:kuis/root.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const MyApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(body: Center(child: Text('Hello World!'))),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Menu Resto',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Color.fromARGB(255, 34, 152, 255),
+        ),
+        scaffoldBackgroundColor: const Color(0xFFFFF5F0),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color.fromARGB(255, 34, 152, 255),
+          foregroundColor: Colors.white,
+          centerTitle: true,
+        ),
+      ),
+      // GANTI 'Nama Kamu' dengan nama kamu
+      home: const Root(nama: 'Kartiko Damar Jati'),
     );
   }
 }
